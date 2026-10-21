@@ -181,7 +181,7 @@ a.card:hover { border-color: var(--accent); color: var(--text); transform: trans
 
 /* ---------- projects ---------- */
 .projects-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
-.project-thumb { width: calc(100% + 40px); margin: -20px -20px 6px; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; border-radius: var(--radius) var(--radius) 0 0; border-bottom: 1px solid var(--border); background: var(--surface-2); }
+.project-thumb { width: calc(100% + 40px); max-width: none; margin: -20px -20px 6px; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; border-radius: var(--radius) var(--radius) 0 0; border-bottom: 1px solid var(--border); background: var(--surface-2); }
 .project-card { overflow: hidden; }
 .stack { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 0; }
 .project .page-head { padding-left: 0; padding-right: 0; }
