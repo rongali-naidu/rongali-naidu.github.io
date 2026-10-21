@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% from "_macros.html" import project_card %}
+{% block title %}Projects · {{ site.name }}{% endblock %}
+{% block main %}
+<section class="wrap page-head">
+  <h1>Projects</h1>
+  <p class="lede">Things I've built, with the code to go with them.</p>
+</section>
+<section class="wrap grid projects-grid">
+  {% for pr in projects %}{{ project_card(pr) }}{% endfor %}
+</section>
+{% endblock %}

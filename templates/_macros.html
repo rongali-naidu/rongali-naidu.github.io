@@ -11,3 +11,13 @@
   </a>
 </li>
 {%- endmacro %}
+
+{% macro project_card(pr) -%}
+<a class="card project-card" href="{{ pr.url }}">
+  {% if pr.image %}<img class="project-thumb" src="/static/projects/{{ pr.image }}" alt="" loading="lazy">{% endif %}
+  <span class="eyebrow">{{ pr.year }}{% if pr.status %} · {{ pr.status }}{% endif %}</span>
+  <span class="card-title">{{ pr.title }}</span>
+  <span class="card-text">{{ pr.summary }}</span>
+  <span class="stack">{% for s in pr.stack[:5] %}<span class="chip">{{ s }}</span>{% endfor %}</span>
+</a>
+{%- endmacro %}

@@ -11,6 +11,54 @@ links:
   - { label: LinkedIn, url: "https://www.linkedin.com/in/rongalinaidu/" }
   - { label: GitHub, url: "https://github.com/rongali-naidu" }
 
+# Projects. Add a new block to list another project; newest first.
+# Fields: slug, title, summary, year, status, repo, image (in static/projects/), stack,
+# overview (Markdown), how_it_works (steps), highlights ({title, text}), links ({label, url}).
+projects:
+  - slug: ai-data-discovery-agent
+    title: AI Data Discovery Agent
+    summary: >
+      Ask questions about your data lake in plain English: find datasets, understand what
+      fields mean, and generate SQL, grounded in your own catalog metadata and query history.
+    year: 2025
+    status: Open source · MIT
+    repo: https://github.com/rongali-naidu/ai-data-discovery-agent
+    image: ai-data-discovery-agent.gif
+    image_alt: Architecture of the AI Data Discovery Agent built on Amazon Quick Suite
+    stack: [AWS Glue Data Catalog, Amazon Athena, Amazon S3, AWS Lambda, Amazon Quick Suite, LLMs / RAG, Python]
+    overview: |
+      An AI-powered data discovery and SQL generation agent built on **Amazon Quick Suite**.
+      A Lambda function extracts fine-grained metadata from the AWS Glue Data Catalog and saved
+      queries from Athena, stores them as JSON documents in S3, and Quick Suite ingests them as a
+      knowledge base. A chat agent then uses that context to help people discover datasets,
+      understand the business meaning of fields, and generate accurate SQL.
+
+      It builds on my AWS Big Data Blog post from October 2024, which showed that rich,
+      high-quality metadata is critical for accurate text-to-SQL. Since then, managed services
+      have made knowledge bases and chat agents far simpler to build, and this project tests how
+      far a managed approach goes compared with building agents and knowledge bases from scratch.
+    how_it_works:
+      - A user asks a question in plain English.
+      - Relevant context (table metadata and sample SQL) is retrieved from the knowledge base.
+      - The context and prompt instructions are sent to the LLM.
+      - The LLM answers, whether that's clarifying the data, describing a table, or writing SQL.
+      - The response is returned to the user in the chat agent or browser extension.
+    highlights:
+      - title: Automated metadata extraction
+        text: Walks the Glue Data Catalog and captures tables, columns, partitions, descriptions and view SQL as structured JSON.
+      - title: Real query history as context
+        text: Collects saved queries from every Athena workgroup and links them to their tables, so generated SQL follows patterns your team already uses.
+      - title: RAG-ready knowledge base
+        text: Metadata documents land in S3 and are ingested into Quick Suite knowledge bases for semantic retrieval.
+      - title: Chat agent in the browser
+        text: A Quick Suite agent with a sample prompt template, plus the browser extension for end-user access.
+      - title: Cross-account ready
+        text: The extractor assumes an IAM role through STS, with an example IAM policy to adapt to your environment.
+    links:
+      - { label: View repository, url: "https://github.com/rongali-naidu/ai-data-discovery-agent" }
+      - { label: "AWS blog: Enriching metadata for text-to-SQL", url: "https://aws.amazon.com/blogs/big-data/enriching-metadata-for-accurate-text-to-sql-generation-for-amazon-athena" }
+      - { label: "LinkedIn: What it takes to call data AI-ready", url: "https://www.linkedin.com/pulse/what-takes-call-ai-ready-naidu-rongali-mgfwc/" }
+
 # About page (Markdown).
 about: |
   I'm a data engineer. Over the years I've also worked as a BI engineer, a database engineer

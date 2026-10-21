@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}{{ project.title }} · {{ site.name }}{% endblock %}
+{% block description %}{{ project.summary }}{% endblock %}
+{% block main %}
+<article class="wrap narrow project">
+  <header class="page-head">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/projects/">Projects</a></nav>
+    <h1>{{ project.title }}</h1>
+    <p class="lede">{{ project.summary }}</p>
+    <p class="meta">{{ project.year }}{% if project.status %} <span aria-hidden="true">·</span> {{ project.status }}{% endif %}</p>
+    <div class="hero-actions">
+      {% if project.repo %}
+      <a class="btn btn-primary" href="{{ project.repo }}" rel="noopener">
+        <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" style="margin-right:8px"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+        View repository
+      </a>
+      {% endif %}
+    </div>
+  </header>
+
+  {% if project.image %}
+  <figure class="project-figure">
+    <img src="/static/projects/{{ project.image }}" alt="{{ project.image_alt or project.title }}">
+  </figure>
+  {% endif %}
+
+  <section class="prose">
+    <h2 id="overview">Overview</h2>
+    {{ project.overview_html|safe }}
+
+    {% if project.how_it_works %}
+    <h2 id="how-it-works">How it works</h2>
+    <ol>{% for step in project.how_it_works %}<li>{{ step }}</li>{% endfor %}</ol>
+    {% endif %}
+  </section>
+
+  {% if project.highlights %}
+  <section class="project-section">
+    <h2>Highlights</h2>
+    <div class="grid highlights">
+      {% for h in project.highlights %}
+      <div class="card"><span class="card-title small">{{ h.title }}</span><span class="card-text">{{ h.text }}</span></div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if project.stack %}
+  <section class="project-section">
+    <h2>Tech stack</h2>
+    <p class="stack">{% for s in project.stack %}<span class="chip">{{ s }}</span>{% endfor %}</p>
+  </section>
+  {% endif %}
+
+  {% if project.links %}
+  <section class="project-section">
+    <h2>Links</h2>
+    <ul class="link-list">
+      {% for l in project.links %}<li><a href="{{ l.url }}" rel="noopener">{{ l.label }} <span aria-hidden="true">↗</span></a></li>{% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</article>
+{% endblock %}

@@ -6,6 +6,7 @@ Usage: python build.py [--content ../blogs] [--out dist]
 """
 import argparse
 import datetime as dt
+import hashlib
 import html
 import json
 import os
@@ -236,7 +237,15 @@ def main():
     env = Environment(loader=FileSystemLoader(HERE / "templates"),
                       autoescape=select_autoescape(["html", "xml"]))
     year = dt.date.today().year
-    common = {"site": cfg, "year": year, "topics": topic_list, "post_count": len(posts)}
+    projects = cfg.get("projects") or []
+    for pr in projects:
+        pr["url"] = f"/projects/{pr['slug']}/"
+        pr["overview_html"] = md.render(pr.get("overview", ""))
+    # cache-busting version for CSS/JS, so browsers pick up style changes right away
+    asset_v = hashlib.sha1(b"".join(
+        f.read_bytes() for f in sorted((out / "static").glob("*.*")))).hexdigest()[:8]
+    common = {"site": cfg, "year": year, "topics": topic_list, "post_count": len(posts),
+              "projects": projects, "v": asset_v}
 
     def write(url, template, **ctx):
         dest = out / url.strip("/") / "index.html" if url != "/" else out / "index.html"
@@ -246,6 +255,9 @@ def main():
 
     write("/", "home.html", recent=posts[:8])
     write("/blog/", "blog.html", posts=posts)
+    write("/projects/", "projects.html")
+    for pr in projects:
+        write(pr["url"], "project.html", project=pr)
     write("/topics/", "topics.html")
     write("/about/", "about.html", about_html=md.render(cfg.get("about", "")))
     for t in topic_list:

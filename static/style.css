@@ -179,6 +179,24 @@ a.card:hover { border-color: var(--accent); color: var(--text); transform: trans
 .contact { margin-top: 40px; }
 .about .prose img { max-width: min(340px, 100%); }
 
+/* ---------- projects ---------- */
+.projects-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+.project-thumb { width: calc(100% + 40px); margin: -20px -20px 6px; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; border-radius: var(--radius) var(--radius) 0 0; border-bottom: 1px solid var(--border); background: var(--surface-2); }
+.project-card { overflow: hidden; }
+.stack { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 0; }
+.project .page-head { padding-left: 0; padding-right: 0; }
+.project .hero-actions { margin-top: 20px; }
+.project-figure { margin: 8px 0 40px; }
+.project-figure img { display: block; width: 100%; border-radius: var(--radius); border: 1px solid var(--border); background: #fff; }
+.project-section { margin-top: 48px; }
+.project-section h2 { font-size: 27px; margin-bottom: 16px; }
+.highlights { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.card-title.small { font-size: 17px; }
+.link-list { list-style: none; padding: 0; margin: 0; }
+.link-list li { border-bottom: 1px solid var(--border); }
+.link-list a { display: block; padding: 12px 0; text-decoration: none; font-weight: 500; }
+@media (max-width: 640px) { .projects-grid { grid-template-columns: 1fr; } }
+
 /* ---------- responsive ---------- */
 @media (max-width: 960px) {
   .post-layout.has-toc { grid-template-columns: minmax(0, 720px); }

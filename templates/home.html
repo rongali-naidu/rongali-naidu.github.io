@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "_macros.html" import post_row %}
+{% from "_macros.html" import post_row, project_card %}
 {% block main %}
 <section class="hero wrap">
   <p class="eyebrow">Data engineering notes</p>
@@ -16,6 +16,18 @@
     <div><dt>Building data platforms since</dt><dd>2004</dd></div>
   </dl>
 </section>
+
+{% if projects %}
+<section class="wrap section">
+  <div class="section-head">
+    <h2>Projects</h2>
+    <a class="more" href="/projects/">All projects →</a>
+  </div>
+  <div class="grid projects-grid">
+    {% for pr in projects[:3] %}{{ project_card(pr) }}{% endfor %}
+  </div>
+</section>
+{% endif %}
 
 <section class="wrap section two-col">
   <div>
