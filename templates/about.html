@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}About · {{ site.name }}{% endblock %}
+{% block main %}
+<article class="wrap narrow about">
+  <header class="page-head">
+    <h1>About me</h1>
+    <p class="lede">{{ site.tagline }}</p>
+  </header>
+  <div class="prose">{{ about_html|safe }}</div>
+  <section class="contact card">
+    <span class="card-title">Get in touch</span>
+    <span class="card-text">Happy to talk data platforms, data quality, or anything on this site.</span>
+    <span class="hero-actions">
+      {% for l in site.links %}<a class="btn" href="{{ l.url }}" rel="me noopener">{{ l.label }}</a>{% endfor %}
+    </span>
+  </section>
+</article>
+{% endblock %}

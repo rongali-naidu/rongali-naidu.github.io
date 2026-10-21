@@ -1,0 +1,4 @@
+dist/
+_deps/
+blogs/
+__pycache__/

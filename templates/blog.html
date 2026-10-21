@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% from "_macros.html" import post_row %}
+{% block title %}Blog · {{ site.name }}{% endblock %}
+{% block main %}
+<section class="wrap page-head">
+  <h1>Blog</h1>
+  <p class="lede">{{ post_count }} articles on data engineering, architecture, AWS and GenAI.</p>
+  <div class="search-box">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <input id="search" type="search" placeholder="Search titles, topics and summaries…" autocomplete="off" aria-label="Search posts">
+    <kbd>/</kbd>
+  </div>
+  <div class="filter-row" role="group" aria-label="Filter by topic">
+    <button type="button" class="filter is-active" data-topic="">All</button>
+    {% for t in topics %}<button type="button" class="filter" data-topic="{{ t.name }}">{{ t.name }}</button>{% endfor %}
+  </div>
+</section>
+<section class="wrap">
+  <p class="result-count" id="result-count" aria-live="polite"></p>
+  <ul class="post-list" id="post-list">
+    {% for p in posts %}{{ post_row(p) }}{% endfor %}
+  </ul>
+  <p class="empty" id="empty" hidden>No posts match that search.</p>
+</section>
+{% endblock %}

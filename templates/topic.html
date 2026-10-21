@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% from "_macros.html" import post_row %}
+{% block title %}{{ topic.name }} · {{ site.name }}{% endblock %}
+{% block main %}
+<section class="wrap page-head">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/topics/">Topics</a></nav>
+  <h1>{{ topic.name }}</h1>
+  <p class="lede">{{ topic.posts|length }} post{{ "s" if topic.posts|length != 1 }}</p>
+  {% if topic.groups|length > 1 %}
+  <nav class="filter-row" aria-label="Jump to section">
+    {% for name, items in topic.groups %}<a class="filter" href="#{{ name|lower|replace(' ', '-') or 'general' }}">{{ name or "General" }} <span class="count">{{ items|length }}</span></a>{% endfor %}
+  </nav>
+  {% endif %}
+</section>
+<section class="wrap">
+  {% for name, items in topic.groups %}
+    {% if topic.groups|length > 1 %}<h2 class="group-title" id="{{ name|lower|replace(' ', '-') or 'general' }}">{{ name or "General" }}</h2>{% endif %}
+    <ul class="post-list">{% for p in items %}{{ post_row(p, show_topic=False) }}{% endfor %}</ul>
+  {% endfor %}
+</section>
+{% endblock %}

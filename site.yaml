@@ -1,0 +1,70 @@
+# Site settings. Edit freely; run build.py again to regenerate.
+name: Naidu Rongali
+short: NR
+url: https://rongali-naidu.github.io
+tagline: Data engineer since 2004, from data warehouses to lakehouses and GenAI on AWS.
+intro: >
+  Notes and deep-dives from two decades of building data platforms: strategy, architecture,
+  governance, AWS analytics services, SQL internals, streaming, and GenAI for data engineers.
+
+links:
+  - { label: LinkedIn, url: "https://www.linkedin.com/in/rongalinaidu/" }
+  - { label: GitHub, url: "https://github.com/rongali-naidu" }
+
+# About page (Markdown).
+about: |
+  I'm a data engineer. Over the years I've also worked as a BI engineer, a database engineer
+  and in MLOps, but data engineering is how I identify myself.
+
+  Over the past twenty years, I've had a front-row seat to every major shift in this field. I
+  started in the days of OLTP versus OLAP debates, moved through the scaling challenges of large
+  RAC clusters, then into the rise of big data frameworks, and later the shift to data lakes and
+  modern cloud architecture. Now I'm deep in the AI wave.
+
+  Here's what I've learned through all of that change: the tools and technologies keep evolving,
+  but the fundamentals don't. You still need the right **data strategy**, solid **data
+  architecture**, strong **data governance**, and teams organized in a way that maps clearly to
+  business goals. That's been true in every single wave, and it's exactly where my focus is today.
+
+  Thanks to AI, hands-on coding is no longer the time sink it used to be. So I've stayed close to
+  low-level design and I still write code myself. It keeps my thinking sharp and grounded in
+  reality, while my main focus stays on strategy, architecture and governance.
+
+  ## My journey
+
+  My career started in 2004 at Cognizant, working on data warehousing projects in a hybrid role
+  that covered both ETL and BI engineering. Ralph Kimball's books were my foundation. I then
+  worked with clients in logistics, manufacturing and retail, and later at product companies: at
+  **Oracle** on analytical solutions in the Oracle Fusion ERP suite, and at **Amazon** on data
+  ranging from terabytes to petabytes. Over the years the work moved from data warehouses to
+  data lakehouses and feature stores.
+
+  Along the way I was granted a **US patent** for a solution that efficiently processes
+  high-volume data, designed before the Hadoop era.
+
+  ![Amazon patent award](/images/patent.jpg)
+
+  ## What I work with today
+
+  - **Lakehouse on AWS:** S3, Glue, Lake Formation, Redshift
+  - **Table formats:** Apache Iceberg, S3 Tables
+  - **Processing:** Athena, Spark (PySpark), DuckDB, Polars
+  - **Ingestion and streaming:** AWS DMS (CDC), Kinesis, Firehose, Kafka, Flink
+  - **GenAI:** agents and MCP, Amazon Bedrock, RAG, embeddings and vector search
+  - **Databases:** PostgreSQL, Redshift
+  - **Languages and tooling:** SQL, Python, AWS CDK
+
+  ## Where I started
+
+  Tools from my data warehousing years:
+
+  - **ETL:** Informatica, SSIS, DataStage, OWB, ODI, PL/SQL
+  - **Reporting and BI:** OBIEE, Cognos, Essbase, SSRS
+  - **Databases:** Oracle, SQL Server
+
+  ## Why this site
+
+  I write these posts mainly to summarize what I've learned, for my own future reference, and to
+  share it with anyone who's interested. Working in tech means continuously learning and
+  unlearning as the stack changes, and having these recorded versions helps me quickly connect
+  back to what I learned before.

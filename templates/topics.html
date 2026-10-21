@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Topics · {{ site.name }}{% endblock %}
+{% block main %}
+<section class="wrap page-head">
+  <h1>Topics</h1>
+  <p class="lede">Every post, grouped by subject.</p>
+</section>
+<section class="wrap grid topics-grid">
+  {% for t in topics %}
+  <a class="card" href="{{ t.url }}">
+    <span class="card-title">{{ t.name }}</span>
+    <span class="meta">{{ t.posts|length }} post{{ "s" if t.posts|length != 1 }}</span>
+    {% set subs = t.groups|map(attribute=0)|select|list %}
+    {% if subs %}<span class="card-text">{{ subs|join(" · ") }}</span>{% endif %}
+  </a>
+  {% endfor %}
+</section>
+{% endblock %}

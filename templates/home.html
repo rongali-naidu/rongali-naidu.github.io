@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% from "_macros.html" import post_row %}
+{% block main %}
+<section class="hero wrap">
+  <p class="eyebrow">Data engineering notes</p>
+  <h1>Hi, I'm {{ site.name.split()[0] }}.</h1>
+  <p class="lede">{{ site.tagline }}</p>
+  <p class="hero-text">{{ site.intro }}</p>
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="/blog/">Read the blog</a>
+    <a class="btn" href="/about/">About me</a>
+  </div>
+  <dl class="stats">
+    <div><dt>Articles</dt><dd>{{ post_count }}</dd></div>
+    <div><dt>Topics</dt><dd>{{ topics|length }}</dd></div>
+    <div><dt>Building data platforms since</dt><dd>2004</dd></div>
+  </dl>
+</section>
+
+<section class="wrap section two-col">
+  <div>
+    <div class="section-head">
+      <h2>Recently published</h2>
+      <a class="more" href="/blog/">All posts →</a>
+    </div>
+    <ul class="post-list">
+      {% for p in recent %}{{ post_row(p) }}{% endfor %}
+    </ul>
+  </div>
+  <aside>
+    <div class="section-head"><h2>Topics</h2></div>
+    <ul class="topic-cloud">
+      {% for t in topics %}
+        <li><a href="{{ t.url }}">{{ t.name }} <span class="count">{{ t.posts|length }}</span></a></li>
+      {% endfor %}
+    </ul>
+  </aside>
+</section>
+{% endblock %}

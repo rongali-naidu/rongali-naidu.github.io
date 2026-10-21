@@ -1,0 +1,13 @@
+{% macro post_row(p, show_topic=True) -%}
+<li class="post-row">
+  <a href="{{ p.url }}">
+    <span class="post-row-title">{{ p.title }}</span>
+    {% if p.summary %}<span class="post-row-summary">{{ p.summary }}</span>{% endif %}
+    <span class="meta">
+      {% if show_topic %}<span class="chip">{{ p.topic_label }}</span>{% endif %}
+      <time datetime="{{ p.date.isoformat() }}">{{ p.date.strftime("%b %d, %Y") }}</time>
+      <span aria-hidden="true">·</span> {{ p.minutes }} min read
+    </span>
+  </a>
+</li>
+{%- endmacro %}
