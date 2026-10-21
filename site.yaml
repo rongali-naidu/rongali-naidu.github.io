@@ -61,8 +61,13 @@ projects:
 
 # About page (Markdown).
 about: |
-  I'm a data engineer. Over the years I've also worked as a BI engineer, a database engineer
-  and in MLOps, but data engineering is how I identify myself.
+  I currently work as an **AI Engineer**, building agentic solutions that enable data discovery
+  and data analysis. My focus is creating a semantic layer from knowledge graphs, ontology
+  artifacts, and enriched metadata that covers business glossaries and metric definitions, so
+  that AI agents understand what the data actually means.
+
+  At heart I'm a data engineer. Over the years I've also worked as a BI engineer, a database
+  engineer and in MLOps, but data engineering is how I identify myself.
 
   Over the past twenty years, I've had a front-row seat to every major shift in this field. I
   started in the days of OLTP versus OLAP debates, moved through the scaling challenges of large
@@ -99,6 +104,7 @@ about: |
   - **Processing:** Athena, Spark (PySpark), DuckDB, Polars
   - **Ingestion and streaming:** AWS DMS (CDC), Kinesis, Firehose, Kafka, Flink
   - **GenAI:** agents and MCP, Amazon Bedrock, RAG, embeddings and vector search
+  - **Semantic layer:** knowledge graphs, ontologies, business glossaries, metric definitions
   - **Databases:** PostgreSQL, Redshift
   - **Languages and tooling:** SQL, Python, AWS CDK
 
