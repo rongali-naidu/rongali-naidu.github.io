@@ -22,9 +22,9 @@
     <div class="wrap header-row">
       <a class="brand" href="/"><span class="brand-mark">{{ site.short }}</span><span class="brand-name">{{ site.name }}</span></a>
       <nav class="nav" aria-label="Main">
-        {% set nav = [("/blog/", "Blog"), ("/projects/", "Projects"), ("/topics/", "Topics"), ("/about/", "About")] %}
+        {% set nav = [("/blog/", "Blog"), ("/projects/", "Projects"), ("/semantic-architecture-for-ai-agents/", "Semantic Architecture|Semantics"), ("/topics/", "Topics"), ("/about/", "About")] %}
         {% for href, label in nav %}
-          <a href="{{ href }}"{% if url.startswith(href) %} aria-current="page"{% endif %}>{{ label }}</a>
+          {% set long, _, short = label.partition("|") %}<a href="{{ href }}"{% if url.startswith(href) %} aria-current="page"{% endif %}>{% if short %}<span class="nav-long">{{ long }}</span><span class="nav-short">{{ short }}</span>{% else %}{{ long }}{% endif %}</a>
         {% endfor %}
         {% for l in site.links if l.label == "LinkedIn" %}
         <a class="icon-btn" href="{{ l.url }}" rel="me noopener" aria-label="LinkedIn profile" title="LinkedIn">
