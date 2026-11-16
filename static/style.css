@@ -210,7 +210,8 @@ a.card:hover { border-color: var(--accent); color: var(--text); transform: trans
   .nav { gap: 0; }
   .nav-long { display: none; }
   .nav-short { display: inline; }
-  .nav a:not(.icon-btn) { padding: 6px 5px; font-size: 14px; }
+  .nav a[href="/topics/"] { display: none; } /* topics are listed on the home and blog pages */
+  .nav a:not(.icon-btn) { padding: 6px 4px; font-size: 13.5px; }
   .nav a.icon-btn { display: none; } /* search lives on the Blog page */
   .icon-btn { width: 34px; }
   .filter-row { flex-wrap: nowrap; overflow-x: auto; margin-right: -16px; padding-right: 16px; padding-bottom: 4px; scrollbar-width: none; }
