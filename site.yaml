@@ -15,6 +15,96 @@ links:
 # Fields: slug, title, summary, year, status, repo, image (in static/projects/), stack,
 # overview (Markdown), how_it_works (steps), highlights ({title, text}), links ({label, url}).
 projects:
+  - slug: semantic-architecture-for-ai-agents
+    title: Semantic Architecture for AI Agents
+    summary: >
+      Right context in, right answer out. A hands-on reference for the semantic layer that
+      gives AI data agents the meaning behind the data: six dimensions, one retail example.
+    year: 2026
+    status: Open source
+    repo: https://github.com/rongali-naidu/semantic-architecture-for-ai-agents
+    image: semantic-architecture-for-ai-agents.png
+    image_alt: An agent is a model plus a harness; the semantic layer sits outside the agent and feeds prompt, context and harness engineering
+    stack: [Semantic layer, Ontologies, Knowledge graphs, Metadata, Lineage, Data agents]
+    overview: |
+      **Garbage in, garbage out** applies not just to data, but equally to the context behind
+      data agents. An LLM can write SQL, but on its own it doesn't know what *your* business
+      means: which of five "revenue" columns is the right one, that "client" and "customer" are
+      the same thing, or how tables join without double counting. So it gives fluent, confident,
+      wrong answers.
+
+      That missing context lives in a **semantic layer**: the shared meaning of an
+      organization's data, used by AI agents and people alike. **Semantic architecture** is how
+      that layer is designed. This project is a hands-on reference for it, from first principles
+      to products, built on one retail example in every format and checked in CI.
+
+      It's published as a web portal that also includes my
+      [Ontology Basics](/projects/ontology-basics/) course, so the concepts and the hands-on
+      practice sit side by side.
+    how_it_works:
+      - "An agent is a model plus a harness: the model is skilful but knows nothing about your data."
+      - "The semantic layer sits outside the agent and feeds every part of the harness: vocabulary for prompts, meaning for context, a metric API for tools."
+      - "Each of the six dimensions supplies one missing piece of context."
+      - "The dimensions are linked in a graph, so the agent follows stored links instead of guessing at answer time."
+      - "Lineage gives every answer its provenance, and verified answers flow back into the knowledge base."
+    highlights:
+      - title: Metadata
+        text: Descriptions, valid values, owners, classification, quality and contracts.
+      - title: Semantic models
+        text: Governed metrics, dimensions and joins, defined once and compiled to SQL.
+      - title: Knowledge bases
+        text: Policies, guides and a vault of verified SQL.
+      - title: Ontology & taxonomy
+        text: What things are and how they relate.
+      - title: Knowledge graphs
+        text: The data graph of entities, and the semantic graph that links all the dimensions.
+      - title: Lineage
+        text: Where a number came from, and what breaks if a source changes.
+    links:
+      - { label: Open the portal, url: "https://rongali-naidu.github.io/semantic-architecture-for-ai-agents/" }
+      - { label: View repository, url: "https://github.com/rongali-naidu/semantic-architecture-for-ai-agents" }
+      - { label: Ontology Basics course, url: "https://rongali-naidu.github.io/semantic-architecture-for-ai-agents/learn/" }
+
+  - slug: ontology-basics
+    title: Ontology Basics
+    summary: >
+      A free, interactive course on RDF, RDFS, OWL, SHACL, SKOS, SPARQL and openCypher. Read a
+      lesson on the left, edit data and run queries on the right, all in your browser.
+    year: 2026
+    status: Open source · Apache-2.0
+    repo: https://github.com/rongali-naidu/ontology-basics
+    image: ontology-basics.png
+    image_alt: A lesson on SPARQL join patterns with the data editor, query editor and results side by side
+    stack: [RDF / Turtle, SPARQL, OWL, SHACL, SKOS, openCypher]
+    overview: |
+      A hands-on course for learning ontologies by doing. Each page has the lesson on the left;
+      on the right, the data at the top, a query in the middle and the results below. Edit
+      anything and press **Run**. A **Graph** tab draws the data as a graph.
+
+      Everything runs in the browser, with no server and no install: an
+      [Oxigraph](https://github.com/oxigraph/oxigraph) RDF store compiled to WebAssembly,
+      reasoning rules for RDFS and OWL, SHACL validation, and a teaching subset of openCypher for
+      the property-graph lessons. Every lesson uses the same retail example as
+      [Semantic Architecture for AI Agents](/projects/semantic-architecture-for-ai-agents/).
+    how_it_works:
+      - "Concepts first: what an ontology is, classes, properties, restrictions, and how taxonomies, ontologies and knowledge graphs differ."
+      - "RDF and Turtle, then SPARQL: patterns, joins, filters, aggregates, paths and updates, compared with SQL and Cypher."
+      - "Property graphs with openCypher, Neo4j-style, on the same data."
+      - "RDFS and OWL with reasoning you can switch on and off to see what gets inferred."
+      - "SKOS for vocabularies, and SHACL for validating data, ending with a capstone exercise."
+    highlights:
+      - title: Learn by running
+        text: 40 exercises with checks that tell you when your query is right, plus friendly explanations of common errors.
+      - title: See what reasoning adds
+        text: Turn RDFS or OWL reasoning on and see the inferred triples in the results and the graph.
+      - title: RDF and property graphs
+        text: SPARQL and openCypher on the same retail data, so the differences are concrete.
+      - title: Nothing to install
+        text: A static site on GitHub Pages; your progress and edits stay in your browser.
+    links:
+      - { label: Start the course, url: "https://rongali-naidu.github.io/ontology-basics/" }
+      - { label: View repository, url: "https://github.com/rongali-naidu/ontology-basics" }
+
   - slug: ai-data-discovery-agent
     title: AI Data Discovery Agent
     summary: >
