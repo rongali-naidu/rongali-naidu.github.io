@@ -88,17 +88,18 @@ a.card:hover { border-color: var(--accent); color: var(--text); transform: trans
 .card-text { color: var(--text-2); font-size: 15px; }
 
 /* ---------- home ---------- */
-.hero { padding-top: 48px; padding-bottom: 8px; }
-.hero h1 { font-size: clamp(40px, 6vw, 64px); margin: 12px 0 16px; }
+.hero { padding-top: 40px; padding-bottom: 0; }
+.hero h1 { font-size: clamp(38px, 5vw, 56px); margin: 10px 0 14px; }
 .lede { font-size: 20px; color: var(--text-2); margin: 0 0 12px; max-width: 46ch; }
-.hero .lede { font-size: clamp(19px, 2.4vw, 24px); color: var(--text); max-width: 34ch; line-height: 1.4; }
-.hero-text { color: var(--text-2); max-width: 62ch; font-size: 17px; margin: 0 0 28px; }
+.hero .lede { font-size: clamp(18px, 2vw, 21px); color: var(--text); max-width: none; line-height: 1.45; margin-bottom: 8px; }
+.hero-text { color: var(--text-2); max-width: none; font-size: 17px; margin: 0; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 .stats { display: flex; flex-wrap: wrap; gap: 40px; margin: 32px 0 0; padding-top: 20px; border-top: 1px solid var(--border); }
 .stats div { display: flex; flex-direction: column-reverse; }
 .stats dt { color: var(--muted); font-size: 14px; }
 .stats dd { margin: 0; font-family: var(--font-head); font-size: 34px; font-weight: 700; }
 .section { margin-top: 56px; }
+.hero + .section { margin-top: 36px; }
 .tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 14px; }
 .tile { display: flex; flex-direction: column; gap: 6px; padding: 16px 18px; min-height: 132px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: var(--text); box-shadow: var(--shadow); transition: border-color .15s, transform .15s; }
 .tile:hover { border-color: var(--accent); color: var(--text); transform: translateY(-2px); }
@@ -224,7 +225,7 @@ a.card:hover { border-color: var(--accent); color: var(--text); transform: trans
   .filter-row { flex-wrap: nowrap; overflow-x: auto; margin-right: -16px; padding-right: 16px; padding-bottom: 4px; scrollbar-width: none; }
   .filter-row::-webkit-scrollbar { display: none; }
   .filter { flex: none; }
-  .hero { padding-top: 44px; }
+  .hero { padding-top: 32px; }
   .stats { gap: 24px; }
   .stats dd { font-size: 28px; }
   .prose { font-size: 16.5px; }
