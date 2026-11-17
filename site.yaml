@@ -15,6 +15,62 @@ links:
 # Fields: slug, title, summary, year, status, repo, image (in static/projects/), stack,
 # overview (Markdown), how_it_works (steps), highlights ({title, text}), links ({label, url}).
 projects:
+  - slug: data-strategy-and-governance
+    title: Data Strategy & Governance
+    summary: >
+      The fundamentals that outlast every tech wave. A data strategy that ties business goals to
+      people, architecture and technology, and a governance framework for security, privacy,
+      quality and compliance.
+    year: 2026
+    status: Open notes · CC BY 4.0
+    repo: https://github.com/rongali-naidu/data-governance
+    image: data-strategy-framework.png
+    image_alt: Data strategy framework. Business objectives drive analytics and AI, delivered through data architecture, data governance and technology, on a foundation of people and culture, with a measure-and-improve loop
+    stack: [Data strategy, Data governance, Data security, Data privacy, Data quality, Compliance, Metadata and lineage]
+    overview: |
+      Tools change with every wave; the fundamentals don't. You still need the right **data
+      strategy**, solid **data architecture**, strong **data governance**, and teams organized to
+      map clearly to business goals. These notes capture both layers.
+
+      **Data strategy** connects business objectives to the value created by analytics, BI, data
+      science and AI, delivered through three capability pillars (data architecture, data
+      governance, technology) on a foundation of people and data culture, with a
+      measure-and-improve loop. It's cross-checked against AWS, Google Cloud and Databricks
+      references.
+
+      **Data governance** is one of those pillars: the decision rights and accountability for
+      data. It covers three pillars (security, privacy and quality), wrapped by compliance and
+      audit, on a foundation of ownership, policies, and metadata and lineage.
+
+      ![Data governance framework: compliance and audit wrapping data security, privacy and quality, on a foundation of ownership, policies and metadata](/static/projects/data-governance-framework.png)
+
+      The **data quality** section goes deepest: why DQ frameworks replaced database constraints
+      in cloud lakes and warehouses, DQ dimensions, shift-left checks, data profiling with a
+      generic results schema, DQ scoring and certification, ownership, and a DQ tool evaluation
+      matrix.
+    how_it_works:
+      - "Business objectives decide which value to create and set the target data maturity."
+      - "Analytics, BI, data science and AI are where data creates that value."
+      - "Data architecture, data governance and technology deliver it, on a foundation of people, structure and data literacy."
+      - "Governance keeps data protected (security), used only as authorized (privacy) and fit for purpose (quality), and compliance proves it."
+      - "KPIs, a roadmap and periodic reviews feed back into the business objectives."
+    highlights:
+      - title: Data strategy
+        text: Essence, layered framework, eight components, maturity stages, operating models and KPIs.
+      - title: Governance framework
+        text: Security, privacy and quality pillars, wrapped by compliance, on ownership, policies and metadata.
+      - title: Data quality in depth
+        text: From database constraints to Deequ-style frameworks, with dimensions, checks and scoring.
+      - title: Data profiling
+        text: Metrics to collect and a platform-agnostic schema for storing profiling results.
+      - title: DQ tool evaluation
+        text: Deequ, Glue Data Quality, Airflow, dbt, Great Expectations and OpenMetadata, scored against 38 criteria.
+    links:
+      - { label: Data strategy, url: "https://github.com/rongali-naidu/data-governance/tree/main/00-data-strategy" }
+      - { label: Data governance, url: "https://github.com/rongali-naidu/data-governance#readme" }
+      - { label: Data quality, url: "https://github.com/rongali-naidu/data-governance/tree/main/04-data-quality" }
+      - { label: View repository, url: "https://github.com/rongali-naidu/data-governance" }
+
   - slug: semantic-architecture-for-ai-agents
     title: Semantic Architecture for AI Agents
     summary: >
