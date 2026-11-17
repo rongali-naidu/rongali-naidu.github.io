@@ -13,7 +13,7 @@
     <h2>Start here</h2>
   </div>
   <div class="tiles">
-    {% for pr in projects if pr.kind == "guide" %}{{ tile(pr.url, "Guide", pr.title, pr.tile) }}{% endfor %}
+    {% for pr in projects if pr.kind == "guide" %}{{ tile(pr.open_url or pr.url, "Guide", pr.title, pr.tile) }}{% endfor %}
     {% for pr in projects if pr.kind == "project" %}{{ tile(pr.url, "Project", pr.title, pr.tile) }}{% endfor %}
     {{ tile("/blog/", "Blog", "Data Engineering Notes", post_count ~ " articles on AWS, SQL, streaming, GenAI and more.") }}
   </div>

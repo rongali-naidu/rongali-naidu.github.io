@@ -17,6 +17,7 @@ links:
 projects:
   - slug: semantic-architecture-for-ai-agents
     title: Semantic Architecture for AI Agents
+    open_url: /semantic-architecture-for-ai-agents/
     kind: guide
     tile: "The semantic layer that gives AI data agents meaning."
     summary: >
@@ -69,6 +70,7 @@ projects:
 
   - slug: ontology-basics
     title: Ontology Basics
+    open_url: /semantic-architecture-for-ai-agents/learn/
     kind: guide
     tile: "Interactive course: RDF, SPARQL, OWL, SHACL in your browser."
     summary: >

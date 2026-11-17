@@ -22,7 +22,7 @@
 {%- endmacro %}
 
 {% macro project_card(pr) -%}
-<a class="card project-card" href="{{ pr.url }}">
+<a class="card project-card" href="{{ pr.open_url or pr.url }}">
   {% if pr.image %}<img class="project-thumb" src="/static/projects/{{ pr.image }}" alt="">{% endif %}
   <span class="eyebrow">{{ pr.year }}{% if pr.status %} · {{ pr.status }}{% endif %}</span>
   <span class="card-title">{{ pr.title }}</span>
