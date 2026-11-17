@@ -4,7 +4,7 @@
 {% block main %}
 <article class="wrap narrow project">
   <header class="page-head">
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="/projects/">Projects</a></nav>
+    <nav class="crumbs" aria-label="Breadcrumb">{% if project.kind == "guide" %}<a href="/guides/">Guides</a>{% else %}<a href="/projects/">Projects</a>{% endif %}</nav>
     <h1>{{ project.title }}</h1>
     <p class="lede">{{ project.summary }}</p>
     <p class="meta">{{ project.year }}{% if project.status %} <span aria-hidden="true">·</span> {{ project.status }}{% endif %}</p>

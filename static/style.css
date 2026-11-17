@@ -88,17 +88,24 @@ a.card:hover { border-color: var(--accent); color: var(--text); transform: trans
 .card-text { color: var(--text-2); font-size: 15px; }
 
 /* ---------- home ---------- */
-.hero { padding-top: 72px; padding-bottom: 40px; }
+.hero { padding-top: 48px; padding-bottom: 8px; }
 .hero h1 { font-size: clamp(40px, 6vw, 64px); margin: 12px 0 16px; }
 .lede { font-size: 20px; color: var(--text-2); margin: 0 0 12px; max-width: 46ch; }
 .hero .lede { font-size: clamp(19px, 2.4vw, 24px); color: var(--text); max-width: 34ch; line-height: 1.4; }
 .hero-text { color: var(--text-2); max-width: 62ch; font-size: 17px; margin: 0 0 28px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
-.stats { display: flex; flex-wrap: wrap; gap: 40px; margin: 48px 0 0; padding-top: 28px; border-top: 1px solid var(--border); }
+.stats { display: flex; flex-wrap: wrap; gap: 40px; margin: 32px 0 0; padding-top: 20px; border-top: 1px solid var(--border); }
 .stats div { display: flex; flex-direction: column-reverse; }
 .stats dt { color: var(--muted); font-size: 14px; }
 .stats dd { margin: 0; font-family: var(--font-head); font-size: 34px; font-weight: 700; }
 .section { margin-top: 56px; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 14px; }
+.tile { display: flex; flex-direction: column; gap: 6px; padding: 16px 18px; min-height: 132px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; color: var(--text); box-shadow: var(--shadow); transition: border-color .15s, transform .15s; }
+.tile:hover { border-color: var(--accent); color: var(--text); transform: translateY(-2px); }
+.tile-kind { font-size: 11.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.tile-title { font-family: var(--font-head); font-size: 18px; font-weight: 600; line-height: 1.25; }
+.tile-text { color: var(--text-2); font-size: 14px; line-height: 1.45; }
+.tile-arrow { margin-top: auto; padding-top: 4px; color: var(--accent); font-size: 13.5px; font-weight: 500; }
 .section-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 18px; gap: 12px; }
 .section-head h2 { font-size: 26px; }
 .more { font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; }
@@ -211,7 +218,6 @@ a.card:hover { border-color: var(--accent); color: var(--text); transform: trans
   .nav-long { display: none; }
   .nav-short { display: inline; }
   .nav a[href="/topics/"] { display: none; } /* topics are listed on the home and blog pages */
-  .nav a[href="/projects/data-strategy-and-governance/"] { display: none; } /* reachable from Projects */
   .nav a:not(.icon-btn) { padding: 6px 4px; font-size: 13.5px; }
   .nav a.icon-btn { display: none; } /* search lives on the Blog page */
   .icon-btn { width: 34px; }

@@ -17,6 +17,8 @@ links:
 projects:
   - slug: data-strategy-and-governance
     title: Data Strategy & Governance
+    kind: guide
+    tile: "Business goals to architecture, governance and data quality."
     summary: >
       The fundamentals that outlast every tech wave. A data strategy that ties business goals to
       people, architecture and technology, and a governance framework for security, privacy,
@@ -79,8 +81,55 @@ projects:
       - { label: Data quality, url: "https://github.com/rongali-naidu/data-governance/tree/main/04-data-quality" }
       - { label: View repository, url: "https://github.com/rongali-naidu/data-governance" }
 
+  - slug: decluttering-data-architectures
+    title: Decluttering Data Architectures
+    kind: guide
+    tile: "Warehouse, lakehouse, mesh, fabric, Lambda, Kappa, on one map."
+    summary: >
+      Lakehouse, medallion, data mesh, data fabric, Lambda, Kappa, Data Vault: what each one
+      really is, and why most of them answer different questions rather than compete.
+    year: 2026
+    status: Open guide · MIT
+    repo: https://github.com/rongali-naidu/decluttering-data-architectures
+    image: decluttering-data-architectures.png
+    image_alt: The decluttered map. Platforms, layering conventions, processing patterns, modeling methods, operating models, and integration and access, with governance and metadata as cross-cutting concerns
+    stack: [Data warehouse, Lakehouse, Medallion, Data mesh, Data fabric, Lambda and Kappa, Data Vault, Apache Iceberg]
+    overview: |
+      Every vendor publishes its own reference architecture, often with new names for old
+      ideas, which makes "which data architecture should we adopt?" hard to answer. This guide
+      explains each architecture in plain terms, from the traditional data warehouse to the
+      lakehouse, data mesh and data fabric, with AWS and Databricks examples throughout.
+
+      Its main finding: most "architectures" are not alternatives. Some are **platforms**
+      (warehouse, lake, lakehouse), some are **layering conventions** (medallion), some are
+      **processing patterns** (Lambda, Kappa, event-driven), some are **modeling methods**
+      (Data Vault), and some are **operating models** (data mesh). A real design picks one
+      answer to each question, and they combine.
+    how_it_works:
+      - "Start with the terminology: architecture vs platform vs framework, and core data concepts."
+      - "Follow the evolution from warehouses to data lakes and lakehouses, and what each generation fixed."
+      - "Read each architecture as a short chapter: what it is, why it exists, how it works on AWS, and its trade-offs."
+      - "Finish with the decluttered map: six questions, the options for each, and how they combine into one design."
+    highlights:
+      - title: Platforms
+        text: Data warehouse, data lake and lakehouse, with the AWS and Databricks implementations.
+      - title: Processing patterns
+        text: Batch, Lambda, Kappa, and my event-driven data mesh for unifying integration and analytics.
+      - title: Modeling and storage
+        text: Star schemas, Data Vault, file and table formats, partitioning and compression.
+      - title: Integration and access
+        text: Data hub, data fabric, data virtualization, and hybrid architectures.
+      - title: The decluttered map
+        text: Six questions that turn the buzzwords into one coherent design.
+    links:
+      - { label: Read the guide, url: "https://github.com/rongali-naidu/decluttering-data-architectures#contents" }
+      - { label: The decluttered map, url: "https://github.com/rongali-naidu/decluttering-data-architectures/blob/main/docs/17-decluttered-map.md" }
+      - { label: View repository, url: "https://github.com/rongali-naidu/decluttering-data-architectures" }
+
   - slug: semantic-architecture-for-ai-agents
     title: Semantic Architecture for AI Agents
+    kind: guide
+    tile: "The semantic layer that gives AI data agents meaning."
     summary: >
       Right context in, right answer out. A hands-on reference for the semantic layer that
       gives AI data agents the meaning behind the data: six dimensions, one retail example.
@@ -131,6 +180,8 @@ projects:
 
   - slug: ontology-basics
     title: Ontology Basics
+    kind: guide
+    tile: "Interactive course: RDF, SPARQL, OWL, SHACL in your browser."
     summary: >
       A free, interactive course on RDF, RDFS, OWL, SHACL, SKOS, SPARQL and openCypher. Read a
       lesson on the left, edit data and run queries on the right, all in your browser.
@@ -171,6 +222,8 @@ projects:
 
   - slug: ai-data-discovery-agent
     title: AI Data Discovery Agent
+    kind: project
+    tile: "Ask your data lake questions in plain English; get SQL."
     summary: >
       Ask questions about your data lake in plain English: find datasets, understand what
       fields mean, and generate SQL, grounded in your own catalog metadata and query history.

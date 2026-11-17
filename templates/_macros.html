@@ -12,6 +12,15 @@
 </li>
 {%- endmacro %}
 
+{% macro tile(href, kind, title, text) -%}
+<a class="tile" href="{{ href }}">
+  <span class="tile-kind">{{ kind }}</span>
+  <span class="tile-title">{{ title }}</span>
+  <span class="tile-text">{{ text }}</span>
+  <span class="tile-arrow" aria-hidden="true">Open →</span>
+</a>
+{%- endmacro %}
+
 {% macro project_card(pr) -%}
 <a class="card project-card" href="{{ pr.url }}">
   {% if pr.image %}<img class="project-thumb" src="/static/projects/{{ pr.image }}" alt="">{% endif %}

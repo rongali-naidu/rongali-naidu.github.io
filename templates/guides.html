@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% from "_macros.html" import project_card %}
+{% block title %}Guides · {{ site.name }}{% endblock %}
+{% block main %}
+<section class="wrap page-head">
+  <h1>Guides</h1>
+  <p class="lede">Long-form references I keep growing: strategy, architecture, governance and the semantic layer for AI.</p>
+</section>
+<section class="wrap grid projects-grid">
+  {% for pr in projects if pr.kind == "guide" %}{{ project_card(pr) }}{% endfor %}
+</section>
+{% endblock %}

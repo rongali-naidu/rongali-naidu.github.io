@@ -255,6 +255,7 @@ def main():
 
     write("/", "home.html", recent=posts[:8])
     write("/blog/", "blog.html", posts=posts)
+    write("/guides/", "guides.html")
     write("/projects/", "projects.html")
     for pr in projects:
         write(pr["url"], "project.html", project=pr)
