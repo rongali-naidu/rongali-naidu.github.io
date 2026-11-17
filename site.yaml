@@ -38,7 +38,12 @@ projects:
       measure-and-improve loop. It's cross-checked against AWS, Google Cloud and Databricks
       references.
 
-      **Data governance** is one of those pillars: the decision rights and accountability for
+      **Data architecture** is one of those pillars: how data is stored, moved and served, and how
+      the architecture builds governance in. It summarizes my
+      [Decluttering Data Architectures](https://github.com/rongali-naidu/decluttering-data-architectures)
+      guide.
+
+      **Data governance** is another: the decision rights and accountability for
       data. It covers three pillars (security, privacy and quality), wrapped by compliance and
       audit, on a foundation of ownership, policies, and metadata and lineage.
 
@@ -57,6 +62,8 @@ projects:
     highlights:
       - title: Data strategy
         text: Essence, layered framework, eight components, maturity stages, operating models and KPIs.
+      - title: Data architecture
+        text: Components, layer names across vendors, the decluttered map, design principles and governance by design.
       - title: Governance framework
         text: Security, privacy and quality pillars, wrapped by compliance, on ownership, policies and metadata.
       - title: Data quality in depth
@@ -67,6 +74,7 @@ projects:
         text: Deequ, Glue Data Quality, Airflow, dbt, Great Expectations and OpenMetadata, scored against 38 criteria.
     links:
       - { label: Data strategy, url: "https://github.com/rongali-naidu/data-governance/tree/main/00-data-strategy" }
+      - { label: Data architecture, url: "https://github.com/rongali-naidu/data-governance/tree/main/05-data-architecture" }
       - { label: Data governance, url: "https://github.com/rongali-naidu/data-governance#readme" }
       - { label: Data quality, url: "https://github.com/rongali-naidu/data-governance/tree/main/04-data-quality" }
       - { label: View repository, url: "https://github.com/rongali-naidu/data-governance" }
