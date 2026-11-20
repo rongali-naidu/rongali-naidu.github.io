@@ -237,7 +237,7 @@ def main():
     env = Environment(loader=FileSystemLoader(HERE / "templates"),
                       autoescape=select_autoescape(["html", "xml"]))
     year = dt.date.today().year
-    projects = cfg.get("projects") or []
+    projects = [pr for pr in (cfg.get("projects") or []) if not pr.get("hidden")]
     for pr in projects:
         pr["url"] = f"/projects/{pr['slug']}/"
         pr["overview_html"] = md.render(pr.get("overview", ""))

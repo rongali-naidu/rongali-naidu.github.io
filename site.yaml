@@ -12,10 +12,11 @@ links:
   - { label: GitHub, url: "https://github.com/rongali-naidu" }
 
 # Projects. Add a new block to list another project; newest first.
-# Fields: slug, title, summary, year, status, repo, image (in static/projects/), stack,
+# Fields: slug, hidden (true = leave off the site), title, summary, year, status, repo, image (in static/projects/), stack,
 # overview (Markdown), how_it_works (steps), highlights ({title, text}), links ({label, url}).
 projects:
   - slug: semantic-architecture-for-ai-agents
+    hidden: true   # repo is private for now; remove this line to show again
     title: Semantic Architecture for AI Agents
     open_url: /semantic-architecture-for-ai-agents/
     kind: guide
@@ -69,6 +70,7 @@ projects:
       - { label: Ontology Basics course, url: "https://rongali-naidu.github.io/semantic-architecture-for-ai-agents/learn/" }
 
   - slug: ontology-basics
+    hidden: true   # repo is private for now; remove this line to show again
     title: Ontology Basics
     open_url: /semantic-architecture-for-ai-agents/learn/
     kind: guide
